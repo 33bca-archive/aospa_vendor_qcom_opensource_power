@@ -82,7 +82,9 @@ endif
 LOCAL_MODULE := power.qcom
 LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS += -Wno-unused-parameter -Wno-unused-variable
+ifneq ($(TARGET_USES_SYSTEM_POWER_HAL),true)
 LOCAL_VENDOR_MODULE := true
+endif
 include $(BUILD_SHARED_LIBRARY)
 
 endif
