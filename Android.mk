@@ -1,7 +1,5 @@
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(call is-vendor-board-platform,QCOM),true)
-
 # HAL module implemenation stored in
 # hw/<POWERS_HARDWARE_MODULE_ID>.<ro.hardware>.so
 include $(CLEAR_VARS)
@@ -86,5 +84,3 @@ ifneq ($(TARGET_USES_SYSTEM_POWER_HAL),true)
 LOCAL_VENDOR_MODULE := true
 endif
 include $(BUILD_SHARED_LIBRARY)
-
-endif
